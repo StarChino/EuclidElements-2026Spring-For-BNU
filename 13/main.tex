@@ -1,0 +1,46 @@
+\documentclass[12pt]{ctexart}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\title{几何基础作业13}
+\author{无名}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{设直线$l$与双曲线$\Omega$ 交于$A,B$两点,与两条渐近线分别交于$Q,P$
+求证$\left\lvert BQ\right\rvert=\left\lvert PA\right\rvert  $}
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{1.png}
+        \caption{}
+    \end{center}
+\end{figure}
+我们在射影平面$\mathbb{RP^2}$上构造一个射影变换，使得原来的双曲线变为圆，渐近线变为切线，如图
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{2.png}
+        \caption{}
+    \end{center}
+\end{figure}
+\newpage
+那么此时有$(A'B'P'Q')=-1$
+
+根据射影变换交比不变，我们有$(ABPQ)=-1$在原图形内，即
+\[\frac{AP}{PB}:\frac{AQ}{QB}=-1\]
+
+记$AB$中点为$M$
+
+\[\frac{AP}{PB}=\frac{AM+MP}{MB-MP}\]
+\[\frac{AQ}{QB}=\frac{AM+MQ}{QM+MB}\]
+
+代入到交比中，得到$M$也是$PQ$中点
+
+此时
+\[\left\lvert BQ\right\rvert=\left\lvert BM\right\rvert-\left\lvert MQ\right\rvert=\left\lvert AM\right\rvert-\left\lvert MP\right\rvert    =\left\lvert PA\right\rvert \]
+\end{document}
