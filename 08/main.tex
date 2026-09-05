@@ -1,0 +1,40 @@
+\documentclass[12pt]{ctexart}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\title{几何基础作业8}
+\author{无名}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{在希尔伯特几何公理体系中叙述并证明外角定理}
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{01.png}
+        \caption{}
+    \end{center}
+\end{figure}
+\subsection{外角定理}
+如图，在$\bigtriangleup ABC$中,延长$BC$至点$D$，那么$\angle CAB+\angle ABC=\angle DCA$
+\subsection{证明}
+根据II2(对于任意两点A和B，直线AB上至少有一点C，使得B在A、C之间)延长$BC$至$D$
+
+作$CE \Vert  AB$，由IV平行公理(过定直线外一点，至多有一条直线与该直线平行)，那么$CE$唯一
+
+由III4(一个角可以唯一地转移到另一条射线上，使其与给定角相等)，
+假设$\angle ECD\neq \angle ABC$，作$\angle DCF=\angle DCE$FE在同一边，那么现在它们是同位角。
+
+此时必须$CF\Vert AB$，但由IV平行公理(过定直线外一点，至多有一条直线与该直线平行)，这与$CE$唯一矛盾,故同位角相等，即$\angle ECD= \angle ABC$
+
+同理，假设$\angle BAC \neq \angle ACE$，根据III4在E一侧作$\angle ACF=\angle BAC$,它们是内错角，故$AB\Vert CF$，再由IV得到矛盾，从而$\angle BAC= \angle ACE$
+
+那么由于$\angle ACD=\angle ACE+\angle ECD=\angle ABC+\angle BAC$ 故外角定理成立
+
+在三角形内不可能有角为零，故外角也一定大于任意一个不相邻内角。
+\end{document}
