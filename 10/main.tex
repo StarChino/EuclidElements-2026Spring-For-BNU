@@ -1,0 +1,68 @@
+\documentclass[12pt]{ctexart}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\title{几何基础作业10}
+\author{无名}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{设$P(x_0,y_0)$是椭圆上一点，利用仿射变换求过点$P$的椭圆切线方程}
+
+椭圆方程:$C:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$
+
+圆方程：$C':x'^2+y'^2=1$
+
+构造映射$f,\mathbb{R}^2 \to \mathbb{R}^2: \frac{x}{a}=x',\frac{y}{b}=y'$，显然它是一个一一映射
+
+那么椭圆$C$经过仿射变换后就是$C'$，此时$P(x_0,y_0)$在$C'$上对应点$P'(\frac{x_0}{a},\frac{y_0}{b})$
+
+对于单位圆$C'$，切线方程为$x_0x+y_0y=1$，
+那么$P'$的切线方程就是$\frac{x_0}{a}x+\frac{y_0}{b}y=1$
+
+进行逆仿射变换，即得到原方程$\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1$为切线方程
+
+\section{在普通欧氏平面上$SA,SB,SC,SD$是过定点$S$的四条直线,直线$l$与这4条直线分别交于$A,B,C,D$证明$ABCD$是定值}
+
+在$\bigtriangleup SAC$ $\bigtriangleup SBC$中，由正弦定理
+\[\frac{AC}{\sin \angle ASC}=\frac{SC}{\sin \angle SAC}
+\]
+\[\frac{BC}{\sin \angle BSC}=\frac{SC}{\sin \angle SBC}
+\]
+那么
+\[\frac{AC}{BC}=\frac{\sin \angle ASC\cdot \sin \angle SBC}{\sin \angle BSC \sin \angle SAC}
+\]
+同理
+\[\frac{AD}{BD}=\frac{\sin \angle ASD\cdot \sin \angle SBD}{\sin \angle BSD \sin \angle SAD}
+\]
+则
+\[\frac{AC}{BC}:\frac{AD}{BD}=\frac{\sin \angle ASC\cdot \sin \angle SBC}{\sin \angle BSC \sin \angle SAC}\cdot \frac{\sin \angle BSD \sin \angle SAD}{\sin \angle ASD\cdot \sin \angle SBD}
+\]
+化简后有
+\[\frac{AC}{BC}:\frac{AD}{BD}=\frac{\sin \angle ASC}{\sin \angle BSC }\cdot \frac{\sin \angle BSD }{\sin \angle ASD}
+\]
+
+我们再取一个直线$l'$,不经过$S$且与$SA,SB,SC,SD$都相交
+
+定义$S$到$l$的中心投影$\pi_s:l\rightarrow l'$，为$l$上一点$X$,连接$XS$与$l'$交于$X'$
+
+那么再$\pi_s$下,$A\mapsto A',B\mapsto B',C \mapsto C',D \mapsto D'$
+
+由于
+\[\angle ASC=\angle A'SC' \hspace{2em}\angle BSD=\angle B'SD'
+\]
+\[\angle BSC=\angle B'SC' \hspace{2em}\angle ASD=\angle A'SD'
+\]
+那么
+\[\frac{AC}{BC}:\frac{AD}{BD}=\frac{\sin \angle ASC}{\sin \angle BSC }\cdot \frac{\sin \angle BSD }{\sin \angle ASD}=\frac{\sin \angle A'SC'}{\sin \angle B'SC' }\cdot \frac{\sin \angle B'SD' }{\sin \angle A'SD'}=\frac{A'C'}{B'C'}:\frac{A'D'}{B'D'}
+\]
+
+故$(ABCD)$选取与$l$无关，是定值
+\end{document}
