@@ -1,0 +1,54 @@
+\documentclass[12pt]{ctexart}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\title{几何基础作业6}
+\author{无名}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{证明“有理数之树”包含所有的正有理数，且每个有理数都只出现一次}
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{1.png}
+        \caption{}
+    \end{center}
+\end{figure}
+\subsection{定义}
+定义：对于节点$\frac{a}{b}$，其左侧子节点为$\frac{a+b}{b}$，右侧为$\frac{a}{a+b}$
+\subsection{证明树内所有分数都最简}
+考虑所有的正有理数为$\frac{m}{n}\hspace{2em}m,n\in \mathbb{N} ^+$
+那么显然可见，作为最简形式，$m,n$必须互为质数，即需要证明树中会出现所有最简分数。
+
+考虑$\frac{a}{b}$最简，那么$a,b$互质。
+
+若$\frac{a+b}{b}$非最简，那么假设$d=gcd(a,a+b)$，从而$d \vert a $且$d \vert a+b$，故一定会有$d\vert (a+b)-a=b$
+
+这与$a,b$互质矛盾，显然不成立。
+
+同理，右侧$\frac{a}{a+b}$显然也该最简。
+
+而有理数之树的第一层为$\frac{1}{1}$，那么由$\frac{1}{1}$最简可以得到树内所有分数都最简
+\subsection{证明最简分数一定能被找到且唯一}
+假设$\frac{m}{n}$在树中，那么
+
+若$m>n$那么它只能是上一级的左侧子节点，其母节点为$\frac{m-n}{n}$
+
+若$m<n$那么它只能是上一级的右侧子节点，母节点为$\frac{m}{n-m}$
+
+若$m=n$那么它只能是$\frac{1}{1}$
+
+故所有的树中有理数都有唯一的路径到$\frac{1}{1}$，那么只能出现一次
+
+由于起始节点为$\frac{1}{1}$，则m,n任一个取1可以使得另外一个不断累加从而最终取值属于$\mathbb{N^+}$，根据定义这就能构造出任意的有理数$\frac{m}{n}$
+
+证毕
+\end{document}
