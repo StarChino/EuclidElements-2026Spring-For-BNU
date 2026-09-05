@@ -1,0 +1,70 @@
+\documentclass[12pt]{ctexart}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\title{几何基础作业7}
+\author{无名}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{证明自然数集合的幂集与实数集合有相同的基数}
+我们需要证明$\left\lvert \mathcal{P} (\mathbb{N} )\right\rvert=\left\lvert \mathbb{R} \right\rvert  $，我们先考虑$\left\lvert \mathcal{P} (\mathbb{N} )\right\rvert=\left\lvert \{0,1\}^\mathbb{N} \right\rvert  $
+构造特征函数$\chi_A :\mathbb{N}\rightarrow \{0,1\}$ ，为
+\[\chi_A(n)=\begin{cases}
+    1&n\in A\\ 
+    0&n\notin A\\
+\end{cases}\]
+
+那么与此同时，反过来给定$f:\mathbb{N} \rightarrow \{0,1\}$也会定义一个集合$A_f=\{n \in \mathbb{N}\vert f(n)=1\}$
+
+定义映射$\Phi:\mathcal{P} (\mathbb{N} )\rightarrow \{0,1\}^\mathbb{N},\Phi(A)=\chi_A$
+
+若$A\neq B$，则存在$n\in A\backslash  B$， 那么$\chi_A(n)=1$,$\chi_B(n)=0$,既有$\chi_A \neq \chi_B$即$\Phi(A)\neq \Phi(B)$，故$\Phi$为单射
+
+任取$f\in \{0,1\}^\mathbf{N}$，定义$A_f=\{n\vert f(n)=1\}$那么$\Phi(A_f)=\chi_{A_f}=f$，每个$f$都有自身的原像，故$\Phi$是满射
+
+同时$\Phi$也是单射，那么$\Phi$是双射，此时一定会有$\left\lvert \mathcal{P} (\mathbb{N} )\right\rvert=\left\lvert \{0,1\}^\mathbb{N} \right\rvert  $
+
+接下来考虑$\left\lvert \{0,1\}^\mathbb{N} \right\rvert=  \left\lvert \mathbb{R}\right\rvert $
+
+构造$f:\{0,1\}^\mathbb{N}\rightarrow\mathbb{R}$，取$a=(a_1,a_2,...\in\{0,1\}^\mathbb{N})$，那么会有一个唯一对应的十进制小数$f(a)\in \mathbb{R}$，故$f$是单射
+
+构造$g:\mathbb{R}\rightarrow\{0,1\}^\mathbb{N}$，任取$x\in \mathbb{R}$也会有唯一二进制展开$g(x)=(x_1,x_2,...)\in \{0,1\}^\mathbb{N}$
+
+由Cantor–Bernstein–Schroeder定理，会存在一个$\{0,1\}^\mathbb{N}\rightarrow\mathbb{R}$的双射（1-1映射），故$\left\lvert \mathcal{P} (\mathbb{N} )\right\rvert=\left\lvert \{0,1\}^\mathbb{N} \right\rvert=  \left\lvert \mathbb{R}\right\rvert $
+
+证毕
+\section{在希尔伯特公理系统内，仿照定理1的证明，给出定理2的证明}
+\subsection{题目}
+\textbf{定理1}:一平面上的两直线或有一公共点，或无公共点;两平面或无公共点，或有一公共直线，无公共直线时无公共点;一平面和不在其上的一直线或无公共点，或有一公共点。
+
+\textbf{定理2} 过一直线和不在这直线上的一点，或过有公共点的两条不同直线，恒有一个而且只有一个平面.
+
+\textbf{定理1的证明}
+\begin{itemize}
+    \item 1.用反证法(利用$I_2$)
+    \item 2.若两平面有一个公共点A,则还有另一个公共点B($I_7$);然后存在直线AB($I_1$)，并且这直线和它的所有的点都同这两平面的每一个相关联($I_6$)，这两平面在AB 外不能再有公共点，因为否则它们就将是同一个平面($I_5$).
+    \item 3.用反证法($I6$).
+\end{itemize}
+\subsection{证明}
+由$I_3$,每条直线至少有2点，故过有公共点的两条不同直线可转化为过一直线和不在这直线上的一点
+
+由$I_1I_2$，任意两点确定唯一直线，故取不在直线上一点和直线上一点可转化为有公共点的两条不同直线。
+
+假设有公共点的两条不同直线$a,b$，取公共点C，(定理1)，$a$上任意一点A(非C),$b$上任意一点B(非C).
+
+由$I_4I_5$必有且只有一个平面同时过ABC
+
+取$A_1,B_1$分别在$a,b$上不同于A,C和B,C，显然有且只有一个平面过$A_1B_1C$
+
+由$I_5$，AC,BC在ABC上，则a,b在ABC上，故a,b上的$A_1,B_1$也在ABC上
+
+则ABC与$A_1B_1C$重合，故定理2得证
+\end{document}
