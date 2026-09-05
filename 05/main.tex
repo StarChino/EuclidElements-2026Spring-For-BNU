@@ -1,0 +1,60 @@
+\documentclass[11pt]{ctexart}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\title{几何基础作业5}
+\author{无名}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{证明正方形边长与对角线不可公度}
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{1.png}
+        \caption{}
+    \end{center}
+\end{figure}
+
+如图1，设边长$AB=a=1$，对角线$AC=b=\sqrt{2}$，显然$b=\sqrt{2}a$
+
+我们让$b-a$，在BD上截取$a$，那么剩余部分就是$r_1=b-a$。
+
+由相似，我们得到$\frac{EF}{BC}=\frac{EG}{BD}$，从而新的小正方形边长为$a_1=r_1=b-a$
+
+那么新的小正方形对角线长度为$b_1=\sqrt{2}r_1=2-\sqrt{2}$
+
+若a与b可以公度，即$\sqrt{2}=p/q$，那么就应该存在一个u使得所有的$a_i,b_i$可以被u同时量尽， 从而得到无穷递减正整数序列$\{a_i/u\}$ 
+
+显然这种序列并不存在，故若a与b可以公度的假设不成立，也即为不可公度。
+\newpage
+\section{证明正三角形的一条边与这条边上面的高不可公度}
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{2.png}
+        \caption{}
+    \end{center}
+\end{figure}
+
+如图2，我们有正三角形$ABC$，边长$a$，高$h=\frac{\sqrt{3}}{2}a$
+
+现在在高线$AD$上取$AF=\frac{a}{2}$，那么剩余部分就是$FD=h-\frac{a}{2}$
+
+显然此时$AGH$也是正三角形，它和$ABC$相似，边长$a_1=\frac{a}{\sqrt{3}}$，高$h_1=\frac{h}{\sqrt{3}}$
+
+重复这一过程，构造正三角形$AKL$边长$a_2=\frac{a_1}{\sqrt{3}}$，高$h_2=\frac{h_1}{\sqrt{3}}$
+
+以此类推我们得到正三角形序列
+
+\[a_k=\frac{a}{(\sqrt{3})^k} \hspace{1em} h_k=\frac{h}{(\sqrt{3})^k}\]
+
+假设$a$与$h$可公度，那么就应该存在一个$u$使得所有的$a_i,h_i$可以被u同时量尽， 从而得到无穷递减正整数序列$\{a_i/u\}$和$\{h_i/u\}$
+
+显然这种序列并不存在，故若$a$与$h$可以公度的假设不成立，也即为不可公度。
+\end{document}
