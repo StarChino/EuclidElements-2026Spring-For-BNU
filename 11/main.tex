@@ -1,0 +1,80 @@
+\documentclass[12pt]{ctexart}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\title{几何基础作业11}
+\author{无名}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{设$P(x_0,y_0)$是椭圆上一点，利用仿射变换求过点$P$的椭圆切线方程}
+
+椭圆方程:
+\[C:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\]
+
+圆方程：
+\[C':x'^2+y'^2=1\]
+
+构造映射
+\[f,\mathbb{R}^2 \to \mathbb{R}^2: \frac{x}{a}=x',\frac{y}{b}=y'\]
+显然它是一个一一映射
+
+那么椭圆$C$经过仿射变换后就是$C'$，此时$P(x_0,y_0)$在$C'$上对应点$P'(\frac{x_0}{a},\frac{y_0}{b})$
+
+对于单位圆$C'$，切线方程为$x_0x+y_0y=1$，
+那么$P'$的切线方程就是$\frac{x_0}{a}x+\frac{y_0}{b}y=1$
+
+进行逆仿射变换，即得到原方程
+\[\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1\]椭圆在$P(x_0,y_0)$切线方程
+
+\newpage
+\section{找到一个关于圆锥曲线（或圆）的配极对偶命题组}
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{01.png}
+        \caption{}
+    \end{center}
+\end{figure}
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{02.png}
+        \caption{}
+    \end{center}
+\end{figure}
+
+由于圆锥曲线经过射影变换可变成圆，故考虑圆
+\subsection{帕斯卡定理}
+设六边形$A_1A_2A_3 A_4 A_5 A_6$内接于圆$O$，那么
+\[A=A_4\bigcap A_5 \hspace{2em} B=A_5A_6\bigcap A_2A_3 \hspace{2em} C=A_1A_6\bigcap A_3A_4
+\]
+共线
+\subsection{布利安桑定理}
+设六边形$B_1B_2B_3B_4B_5B_6$的边都切与圆$O$，那么$B_1B_4$,$B_2B_5$,$B_3B_6$交于同一点
+\subsection{帕斯卡证明布利安桑}
+如图，由配极，$B_i$的极线是$A_iA_{i+1}$
+
+\[A=A_1A_2\bigcap A_4A_5 \hspace{2em} B=A_5A_6\bigcap A_2A_3 \hspace{2em} C=A_1A_6\bigcap A_3A_4
+\]
+由帕斯卡，ABC共线
+
+而$A_1A_2$的极点是$B_1$，$A_4A_5$极点是$B_4$，那么$A$的极线就是$B_1B_4$
+
+同理$B$极线为$B_2B_5$，$C$为$B_3B_6$
+
+由于$ABC$共线，那么对应的三线交点共点
+\subsection{布利安桑证明帕斯卡}
+如图，由配极，$A_iA_{i+1}$极点$B_i$
+
+$B_1B_4$,$B_2B_5$,$B_3B_6$交于同一点
+
+由上，$B_1B_4$极点就是$A$，$B_2B_5$为$B$，$B_3B_6$为$C$
+
+那么ABC共线
+\end{document}
